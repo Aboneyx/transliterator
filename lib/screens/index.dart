@@ -31,7 +31,7 @@ class _IndexScreenState extends State<IndexScreen> with SingleTickerProviderStat
         length: 2,
         child: Scaffold(
           appBar: AppBar(
-            title: Text('Transliterator'),
+            title: const Text('Transliterator'),
             actions: [
               Switch(
                 value: context.read<ThemeNotifier>().isDarkMode,
@@ -49,7 +49,7 @@ class _IndexScreenState extends State<IndexScreen> with SingleTickerProviderStat
                   pageController.jumpToPage(index);
                 });
               },
-              tabs: [
+              tabs: const [
                 Tab(icon: Icon(Icons.translate,)),
                 Tab(icon: Icon(Icons.history,)),
               ],

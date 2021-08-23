@@ -3,6 +3,7 @@ import 'package:transliterator_app/databases/database.dart';
 import 'package:transliterator_app/models/model.dart';
 
 class DBLogic {
+  // ignore: constant_identifier_names
   static const String STORE = 'translates';
 
   final _translates = intMapStoreFactory.store(STORE);

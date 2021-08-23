@@ -5,9 +5,9 @@ import 'package:transliterator_app/screens/index.dart';
 
 void main() => runApp(
     ChangeNotifierProvider<ThemeNotifier>(
-        create: (_) => new ThemeNotifier(),
-        child: MyApp()
-    )
+        create: (_) => ThemeNotifier(),
+        child: MyApp(),
+    ),
 );
 
 class MyApp extends StatelessWidget {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Transliterator',
       debugShowCheckedModeBanner: false,
       theme: theme.getTheme(),
-      home: IndexScreen(),
+      home: const IndexScreen(),
     )
     );
   }

@@ -57,7 +57,7 @@ class TranslatorScreen extends StatelessWidget {
               onTap: () {
                 model.swapAlphabet();
               },
-              child: SizedBox.expand(
+              child: const SizedBox.expand(
                 child: Icon(Icons.swap_horiz),
               ),
             ),
@@ -68,7 +68,6 @@ class TranslatorScreen extends StatelessWidget {
               onTap: () {},
               child: SizedBox.expand(
                 child: Align(
-                  alignment: Alignment.center,
                   child: Text(
                     !model.isCyrillicToLatin ? 'Cyrillic' : 'Latin alphabet',
                     textAlign: TextAlign.center,
@@ -111,14 +110,14 @@ class TranslatorScreen extends StatelessWidget {
                 ),
                 Text(
                   model.isCyrillicToLatin ? 'In Cyrillic': 'In the Latin alphabet',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.grey,
                     fontSize: 13,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 IconButton(
-                    icon: Icon(Icons.clear),
+                    icon: const Icon(Icons.clear),
                     onPressed: () {
                       model.clear();
                     })
@@ -129,7 +128,7 @@ class TranslatorScreen extends StatelessWidget {
             ),
             TextFormField(
               autocorrect: true,
-              cursorColor: Color.fromRGBO(249, 6, 64, 1),
+              cursorColor: const Color.fromRGBO(249, 6, 64, 1),
               controller: model.enteredStringController,
               maxLength: 5000,
               onChanged: (value) => model.transliterate(value),
@@ -138,7 +137,7 @@ class TranslatorScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 5),
                 child: Text(
                   "$currentLength из $maxLength",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 10,
                     color: const Color.fromRGBO(169, 140, 225, 1),
                   ),
