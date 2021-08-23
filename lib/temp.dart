@@ -5,7 +5,7 @@ class JsonClass {
   JsonClass({this.data});
 
   JsonClass.fromJson(Map<String, dynamic> json) {
-    this.data = json["data"]==null ? null : (json["data"] as List).map((e)=>Data.fromJson(e)).toList();
+    this.data = json["data"]==null ? null : (json["data"] as List).map((e)=>Data.fromJson(e as Map<String, dynamic>)).toList();
   }
 
   Map<String, dynamic> toJson() {
@@ -26,20 +26,20 @@ class Data {
   Data({this.id, this.name, this.address, this.latitude, this.longitude});
 
   Data.fromJson(Map<String, dynamic> json) {
-    this.id = json["id"];
-    this.name = json["name"];
-    this.address = json["address"];
-    this.latitude = json["latitude"];
-    this.longitude = json["longitude"];
+    id = json["id"] as int;
+    name = json["name"] as String;
+    address = json["address"] as String;
+    latitude = json["latitude"] as String;
+    longitude = json["longitude"] as String;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data["id"] = this.id;
-    data["name"] = this.name;
-    data["address"] = this.address;
-    data["latitude"] = this.latitude;
-    data["longitude"] = this.longitude;
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data["id"] = id;
+    data["name"] = name;
+    data["address"] = address;
+    data["latitude"] = latitude;
+    data["longitude"] = longitude;
     return data;
   }
 }

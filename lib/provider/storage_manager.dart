@@ -6,7 +6,7 @@ class StorageManager {
     // final sp = await SharedPreferences.getInstance();
     // final storage = new FlutterSecureStorage();
     await SharedPreferences.getInstance().then((prefs) async {
-      await prefs.setString(key, value);
+      await prefs.setString(key, value as String);
     });
 
     // await storage.write(key: key, value: value);

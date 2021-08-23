@@ -17,7 +17,7 @@ class TranslatorDB {
   Future<Database> get db async {
     if(_db != null)
       return _db;
-    _db = kIsWeb? await initWebDb() : await initDB();
+    _db = kIsWeb? await initWebDb() as Database : await initDB() as Database;
     return _db;
   }
   Future initWebDb() async {

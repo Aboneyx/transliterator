@@ -19,14 +19,10 @@ class TranslatorScreen extends StatelessWidget {
             child:  Column(
               children: [
                 _buildFirstSection(model: model),
-                Divider(),
+                const Divider(),
                 _buildTextField(model: model),
-                model.inOtherAlphabet == ''
-                    ? SizedBox()
-                    : _buildText(model: model, ctx: context),
-                model.isTranslated
-                    ? _buildTranslated(model: model)
-                    : const SizedBox()
+                if (model.inOtherAlphabet == '') const SizedBox() else _buildText(model: model, ctx: context) as Widget,
+                if (model.isTranslated) _buildTranslated(model: model) as Widget else const SizedBox()
               ],
             ),
           ),
@@ -35,7 +31,7 @@ class TranslatorScreen extends StatelessWidget {
     );
   }
 
-  _buildFirstSection({TranslatorProvider model}) {
+  SizedBox _buildFirstSection({TranslatorProvider model}) {
     return SizedBox(
       height: 40,
       child: Row(
@@ -86,7 +82,7 @@ class TranslatorScreen extends StatelessWidget {
     );
   }
 
-  _buildTextField({TranslatorProvider model}) {
+  Container _buildTextField({TranslatorProvider model}) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(0),

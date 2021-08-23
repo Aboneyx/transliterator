@@ -9,6 +9,6 @@ class HistoryProvider extends BaseBloc {
     print('init history');
   }
   delete(translate, List translates){
-    db.delete(translate);
+    db.delete(translate as Translate);
   }
 }

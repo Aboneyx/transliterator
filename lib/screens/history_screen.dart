@@ -13,7 +13,7 @@ class HistoryTab extends StatelessWidget {
           builder: (context, snapshot) {
             if(!snapshot.hasData)
               return CircularProgressIndicator();
-            List translates = snapshot.data;
+            List translates = snapshot.data as List<dynamic>;
             return ListView(
               children: translates.map((translate) => Dismissible(
                 key: Key('${translate.id}'),

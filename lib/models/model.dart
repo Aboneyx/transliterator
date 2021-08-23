@@ -12,8 +12,8 @@ class Translate {
 
 
   factory Translate.fromMap(Map<String, dynamic> map) => Translate(
-    cyrillic: map['cyrillicValue'],
-    latin: map['latinValue'],
+    cyrillic: map['cyrillicValue'] as String,
+    latin: map['latinValue'] as String,
 
   );
 
